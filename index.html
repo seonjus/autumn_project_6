@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>어떻게 이별까지 사랑하겠어, 널 사랑하는 거지</title>
+	<style type="text/css">
+		@font-face { font-family: 'SunBatang-Medium'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+		body{background:black; overflow: hidden;  width: 100%; }
+
+		p{margin: 0px; padding:2px; text-align: center;  width: 300px; background: white ;color: black; position: relative;font-family: 'SunBatang-Medium';  font-size: 14px;}
+
+		#start { position: absolute;margin: auto; margin-top: 110px; margin-left: 30%; z-index: 2;}
+		#bb {opacity: 0;}
+
+		.circle1 {width:1px; height: 1px; top: -80%;
+				background:white; overflow: hidden;
+				position: absolute;
+				animation: cr 2s infinite; z-index: -10; opacity: 0;}
+		.circle2 { width: 1px; height: 30px; background: white; position: absolute; animation: rrrr 2s infinite ease-in-out; opacity: 0;}
+
+		@keyframes cr{
+			from{ top: 0px; }
+			to{ top: 1000px;}
+		}
+		@keyframes rrrr{
+			from{ top: -500px; opacity:1; }
+			to{top:1200px; opacity:0;}
+		}
+
+
+		#hi {position: absolute;margin: auto;margin-top: 250px; margin-left:31%; z-index: 1;}
+
+		p{position: absolute;}
+
+		@keyframes disappear{
+			from{opacity: 1;}
+			to{opacity: 0;}
+		}
+
+		@keyframes appear{
+			from{opacity: 0;}
+			to{opacity: 1;}
+		}
+
+		#ggg{opacity: 0;}
+
+		@keyframes left{
+			from{left: 2000px;}
+			to { left : 0px; }
+		}
+
+			
+
+			
+	</style>
+</head>
+<body>
+	
+	<section id="aa">
+		<div>
+			<img src="start.jpg" style="position: absolute; " id="start">
+		</div>
+	</section>
+
+	<section id="bb">
+		<div>
+			<img src="hi.jpg" style="position: absolute; " id="hi">
+			<p id="ggg" style="z-index: -10;">어떻게 이별까지 사랑하겠어 널 사랑하는 거지</p>
+			
+		</div>
+		<audio src="music.mp3" id="mm"></audio>
+
+	</section>
+
+	
+
+	<div class="circle1" id="tt"></div>
+	<div class="circle2" id="qq"></div>
+
+	<script type="text/javascript">
+		var astate = "off";
+		start.onclick = function(){
+				mm.play();
+				aa.style.animation = "disappear 1s forwards";
+				bb.style.animation = "appear 3s forwards";
+				
+
+				astate = "on";}
+
+		
+
+
+		for(var t=0; t<300; t++){
+		var xx = tt.cloneNode(true);
+		xx.id = t;
+		xx.style.animationDuration = randomBH(0, 3)+"s";
+		xx.style.animationDelay = t*0.3 + "s";	
+
+		var dd = Math.random()*2 + "px";
+		xx.style.width = dd;
+		xx.style.height = dd;	
+		xx.style.top =Math.random()* 100 + "%";		
+		xx.style.left =Math.random()* 100 + "%";		
+		xx.style.opacity =1;		
+		document.body.appendChild(xx);
+	}
+
+		for(var i=0; i<100; i++){
+			var b = qq.cloneNode(true);
+			b.id = i;
+			b.style.left = Math.random()*2000+"px";
+			b.style.animationDuration = Math.random()*5 +"s";
+			document.body.appendChild(b);
+		}
+
+		for(var i=0; i<50; i++){
+			var xxx = ggg.cloneNode(true);
+			xxx.id = i;
+			xxx.style.animationDuration = randomBH(0, 3)+"s";
+			xxx.style.animationDelay = t*0.5 + "s";
+			xxx.style.animation = randomBH(0, 3) + "left forwards"
+			
+
+			xxx.style.top =Math.random()* 100 + "%";		
+			xxx.style.left =Math.random()* 100 + "%";		
+			xxx.style.opacity =Math.random();		
+			document.body.appendChild(xxx);
+		}
+
+
+
+	//rgb(32,45,64)
+	
+	function rgbmake(){
+		var a = Math.random()*255;
+		var b = Math.random()*255;
+		var c = Math.random()*255;
+		var d ="rgb("+a+","+b+","+c+")";
+		return d;
+	}
+	function randomBH(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	</script>
+</body>
+</html>
